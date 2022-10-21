@@ -10,7 +10,7 @@ dotenv_path = os.path.join(os.path.dirname(__file__), '../.env')
 if os.path.exists(dotenv_path):
     load_dotenv(dotenv_path)
 
-SECRET_KEY = 'django-insecure-=s3+0wtmkl2#bkn78-#05&b=2+i%hebewqg&@*=e4&9j%y!s48'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = True
 
@@ -26,8 +26,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'rest_framework',
+    'rest_framework_simplejwt',
     'drf_yasg',
-    # 'django_filters',
+    'django_filters',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -59,9 +60,9 @@ TEMPLATES = [
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissions'
-    ],
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework.permissions.DjangoModelPermissions'
+    # ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
@@ -115,7 +116,6 @@ SIMPLE_JWT = {
 
 WSGI_APPLICATION = 'Hackathon2022.wsgi.application'
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -146,7 +146,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
