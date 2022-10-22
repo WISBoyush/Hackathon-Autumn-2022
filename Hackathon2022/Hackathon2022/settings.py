@@ -28,6 +28,7 @@ INSTALLED_APPS = [
 
     'users',
     'news',
+    'schedule',
 
     'rest_framework',
     'rest_framework_simplejwt',

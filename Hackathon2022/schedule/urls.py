@@ -1,10 +1,10 @@
 from django.urls import path, include
 from rest_framework.routers import SimpleRouter
 
-from .views import NewsViewSet
+from .views import ScheduleViewSet
 
 router = SimpleRouter()
-router.register('', NewsViewSet, basename='news')
+router.register('', ScheduleViewSet, basename='schedule')
 
 urlpatterns = [
     path('', include(router.urls)),
