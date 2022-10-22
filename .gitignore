@@ -1,3 +1,4 @@
 /venv/
 /.idea/
-!/Hackathon2022/.env
+/Hackathon2022/.env
+/Hackathon2022/media/
