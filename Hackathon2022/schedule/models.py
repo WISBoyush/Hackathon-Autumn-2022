@@ -1,8 +1,10 @@
-from django.db.models import CharField, Model, FileField
+from django.db.models import CharField, Model, FileField, ForeignKey, NOT_PROVIDED
+
+from student_group.models import StudentGroup
 
 
 class Schedule(Model):
-    group_user = CharField(max_length=15, default='')
+    group_user = ForeignKey(StudentGroup, on_delete=NOT_PROVIDED)
     subject = CharField(max_length=120, null=True)
     teacher = CharField(max_length=120, null=True)
     excel = FileField(upload_to='excels/', default='')
