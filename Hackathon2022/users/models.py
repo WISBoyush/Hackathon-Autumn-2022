@@ -9,7 +9,8 @@ from django.utils.translation import gettext_lazy as _
 class User(AbstractUser):
     username = None
     email = models.EmailField(_("email address"), blank=False, unique=True)
-    edu_group = models.ForeignKey(StudentGroup, on_delete=models.NOT_PROVIDED)
+    # TODO сделать адекватно
+    edu_group = models.ForeignKey(StudentGroup, on_delete=models.NOT_PROVIDED, blank=True, null=True, default=1)
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ['first_name', 'last_name']
