@@ -29,11 +29,10 @@ INSTALLED_APPS = [
     'users',
     'news',
     'schedule',
-
-    'rest_framework',
     'rest_framework_simplejwt',
     'drf_yasg',
     'django_filters',
+    'rest_framework',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

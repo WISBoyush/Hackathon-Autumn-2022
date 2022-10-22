@@ -8,3 +8,5 @@ class NewsViewSet(ModelViewSet):
 
     def get_queryset(self):
         return News.objects.all()
+
+

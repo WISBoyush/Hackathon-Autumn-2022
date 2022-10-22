@@ -7,7 +7,7 @@ from rest_framework.serializers import (
     BooleanField,
     ChoiceField
 )
-from users.models import User
+from .models import User
 
 choices = [('student', 'student'), ('tutor', 'tutor'), ('staff', 'staff')]
 

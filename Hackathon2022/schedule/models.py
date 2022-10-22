@@ -1,10 +1,11 @@
-from django.db.models import CharField, Model, TextChoices
+from django.db.models import CharField, Model, FileField
 
 
 class Schedule(Model):
     group_user = CharField(max_length=15, default='')
-    subject = CharField(max_length=120)
-    teacher = CharField(max_length=120)
+    subject = CharField(max_length=120, null=True)
+    teacher = CharField(max_length=120, null=True)
+    excel = FileField(upload_to='excels/', default='')
 
     # even = 'Четная'
     # odd = 'Нечетная'
@@ -15,9 +16,9 @@ class Schedule(Model):
         ('Еженедельно', 'Еженедельно'),
     )
     type_of_week = CharField(
-        max_length=20,
+        max_length=25,
         choices=type_of_week_choices,
-        default=type_of_week_choices[-1],
+        default=type_of_week_choices[0][0],
     )
 
     # Monday = '1Понедельник'
@@ -35,9 +36,9 @@ class Schedule(Model):
         ('6Суббота', 'Суббота'),
     )
     day_of_week = CharField(
-        max_length=20,
+        max_length=25,
         choices=day_of_week_choices,
-        default=day_of_week_choices[1],
+        default=day_of_week_choices[0][0],
     )
 
     # First = '1'
@@ -57,10 +58,10 @@ class Schedule(Model):
     serial_number_of_lesson = CharField(
         max_length=1,
         choices=serial_number_of_lesson_choices,
-        default=serial_number_of_lesson_choices[1],
+        default=serial_number_of_lesson_choices[0][0],
     )
 
-    auditory = CharField(max_length=10)
+    auditory = CharField(max_length=10, null=True)
 
-    def __str__(self):
-        return self.subject
+    # def __str__(self):
+    #     return self.subject
