@@ -5,11 +5,10 @@ from student_group.models import StudentGroup
 
 class ExcelScheduleService:
     def __init__(self, request_data):
-        self.request_data = request_data
+        self.excel_file = request_data
 
     def post_excel_data(self):
-        excel_file = self.request_data.get('excel')
-        df = pd.read_excel(excel_file, sheet_name='template')
+        df = pd.read_excel(self.excel_file, sheet_name='template')
         Schedule.objects.all().delete()
         bulk_create_list = []
         for row_index, row in df.iterrows():

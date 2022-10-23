@@ -15,14 +15,7 @@ class Schedule(Model):
         Thursday = ('4Четверг', 'Четверг')
         Friday = ('5Пятница', 'Пятница')
         Saturday = ('6Суббота', 'Суббота')
-    # day_of_week_choices = (
-    #     (Monday, 'Понедельник'),
-    #     (Tuesday, 'Вторник'),
-    #     (Wednesday, 'Среда'),
-    #     (Thursday, 'Четверг'),
-    #     (Friday, 'Пятница'),
-    #     (Saturday, 'Суббота')
-    # )
+
     day_of_week = CharField(
         max_length=25,
         choices=DayOfWeekChoices.choices,
@@ -44,3 +37,6 @@ class Schedule(Model):
     )
 
     auditory = CharField(max_length=10, null=True)
+
+    def __str__(self):
+        return self.subject

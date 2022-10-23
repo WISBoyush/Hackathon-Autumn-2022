@@ -13,9 +13,9 @@ if os.path.exists(dotenv_path):
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*', 'localhost', '0.0.0.0', '127.0.0.1']
 
 
 INSTALLED_APPS = [
@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'django_filters',
     'rest_framework',
+    'import_export'
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -160,7 +161,10 @@ USE_I18N = True
 USE_TZ = True
 
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
