@@ -4,4 +4,5 @@ from .models import News
 
 @register(News)
 class AdminNews(ModelAdmin):
-    list_display = ('__str__', 'title', 'short_desc', 'description', 'date_posted')
+    list_display = ('title', 'short_desc', 'description', 'date_posted', 'hashtag')
+    list_filter = ('hashtag',)

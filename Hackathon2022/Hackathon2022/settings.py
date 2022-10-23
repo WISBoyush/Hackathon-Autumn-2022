@@ -13,7 +13,7 @@ if os.path.exists(dotenv_path):
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*', 'localhost', '0.0.0.0', '127.0.0.1']
 
