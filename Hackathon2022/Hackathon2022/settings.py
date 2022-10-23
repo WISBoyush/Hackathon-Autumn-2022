@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'news',
     'schedule',
     'student_group',
+    'chat',
 
     'rest_framework_simplejwt',
     'drf_yasg',

@@ -35,7 +35,8 @@ urlpatterns = [
     path('api/users/', include('users.urls')),
     path('api/news/', include('news.urls')),
     path('api/schedule/', include('schedule.urls')),
-    path('api/student_groups/', include('student_group.urls'))
+    path('api/student_groups/', include('student_group.urls')),
+    path('api/chat/', include('chat.urls'))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
